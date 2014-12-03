@@ -1,4 +1,4 @@
 Fluent.Time
 ===========
 
-Convenient (extensions) methods on TimeSpan and DateTimeOffset with fluent syntax ish
+Convenient (extensions) methods on TimeSpan and DateTimeOffset with fluent ish syntax

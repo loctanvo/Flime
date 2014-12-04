@@ -26,22 +26,22 @@ namespace Fluent.Time
 
         public static TimeSpan Weeks(this int weeks)
         {
-            return weeks.Double().Weeks();
+            return weeks.CallDoubleVersionOf(Weeks);
         }
 
         public static TimeSpan Days(this int days)
         {
-            return days.Double().Days();
+            return days.CallDoubleVersionOf(Days);
         }
 
         public static TimeSpan Hours(this int hours)
         {
-            return hours.Double().Hours();
+            return hours.CallDoubleVersionOf(Hours);
         }
 
         public static TimeSpan Minutes(this int minutes)
         {
-            return minutes.Double().Minutes();
+            return minutes.CallDoubleVersionOf(Minutes);
         }
 
         public static TimeSpan And(this TimeSpan timeSpan, TimeSpan addition)
@@ -49,9 +49,9 @@ namespace Fluent.Time
             return timeSpan.Add(addition);
         }
 
-        private static double Double(this int value)
+        private static TimeSpan CallDoubleVersionOf(this int value, Func<double, TimeSpan> doubleVersion)
         {
-            return value;
+            return doubleVersion(value);
         }
     }
 }

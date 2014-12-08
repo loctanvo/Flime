@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="FluentDateTimeOffsetTest.cs" />
     <Compile Include="FluentTimeSpanTest.cs" />
+    <Compile Include="NowTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

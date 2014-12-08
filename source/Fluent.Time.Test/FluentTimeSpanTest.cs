@@ -42,6 +42,15 @@ namespace Fluent.Time.Test
             Assert.That(value.Minutes(), Is.EqualTo(TimeSpan.FromMinutes(value)));
         }
 
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(42)]
+        [TestCase(4.2)]
+        public void Seconds_ParseCorrectly(double value)
+        {
+            Assert.That(value.Seconds(), Is.EqualTo(TimeSpan.FromSeconds(value)));
+        }
+
         [Test]
         public void And_AddsTheTime()
         {

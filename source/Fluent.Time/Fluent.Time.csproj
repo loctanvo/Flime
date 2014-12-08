@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateTimeProvider.cs" />
+    <Compile Include="Now.cs" />
     <Compile Include="FluentDateTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FluentTimeSpan.cs" />

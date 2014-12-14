@@ -6,7 +6,12 @@ namespace Fluent.Time
     {
         public static DateTimeOffset Ago(this TimeSpan ago)
         {
-            return DateTimeOffset.Now.Subtract(ago);
+            return Now.Utc.Subtract(ago);
+        }
+
+        public static DateTimeOffset FromNow(this TimeSpan fromNow)
+        {
+            return Now.Utc.Add(fromNow);
         }
     }
 }

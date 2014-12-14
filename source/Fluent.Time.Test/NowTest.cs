@@ -45,6 +45,7 @@ namespace Fluent.Time.Test
         {
             var utc = Now.OfKind<Utc>();
 
+            Assert.That(utc, Is.EqualTo(Now.Utc));
             Assert.That(utc.Offset, Is.EqualTo(TimeSpan.Zero));
         }
 

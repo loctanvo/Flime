@@ -1,5 +1,4 @@
 ﻿using System;
-using Fluent.Time.Extensions;
 
 namespace Fluent.Time
 {
@@ -12,21 +11,9 @@ namespace Fluent.Time
             Reset();
         }
 
-        public static DateTimeOffset Of(Kind kind)
+        public static DateTimeOffset OfKind<T>() where T:IKindBasedNow, new()
         {
-            if (kind == Kind.Utc)
-            {
-                return Utc;
-            }
-            if (kind == Kind.Local)
-            {
-                return LocalTime;
-            }
-
-            throw new ArgumentException(string
-                .Format("Kind with value {0} is not supported. Valid values are: {1}",
-                    kind,
-                    Enum.GetNames(typeof (Kind)).SeparatedBy("|")));
+            return new T().Now;
         }
 
         public static DateTimeOffset Utc

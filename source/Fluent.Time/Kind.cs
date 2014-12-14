@@ -1,8 +1,19 @@
-﻿namespace Fluent.Time
+﻿using System;
+
+namespace Fluent.Time
 {
-    public enum Kind
+    public interface IKindBasedNow
     {
-        Utc = 0,
-        Local = 1
+        DateTimeOffset Now { get; }
+    }
+
+    public class Utc : IKindBasedNow
+    {
+        public DateTimeOffset Now { get { return Time.Now.Utc; } }
+    }
+
+    public class Local : IKindBasedNow
+    {
+        public DateTimeOffset Now { get { return Time.Now.LocalTime; } }
     }
 }

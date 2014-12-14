@@ -41,38 +41,26 @@ namespace Fluent.Time.Test
         }
 
         [Test]
-        public void Of_UtcKind_ReturnsUtcKind()
+        public void OfKind_Utc_ReturnsUtcKind()
         {
-            var utc = Now.Of(Kind.Utc);
+            var utc = Now.OfKind<Utc>();
 
             Assert.That(utc.Offset, Is.EqualTo(TimeSpan.Zero));
         }
 
         [Test]
-        public void Of_LocalKind_ReturnsLocalTime()
+        public void OfKind_Local_ReturnsLocalTime()
         {
             const string cultureWithOffsetNotZero = "nb-NO";
             TimeMachine.Sandbox(cultureWithOffsetNotZero, time =>
             {
                 time.FreezeTo(Some.Time);
-                var result = Now.Of(Kind.Local);
+                var result = Now.OfKind<Local>();
                 var localTime = Now.LocalTime;
 
                 Assert.That(result.Ticks, Is.EqualTo(localTime.Ticks));
                 Assert.That(result.Offset, Is.EqualTo(localTime.Offset));
             });
-        }
-
-        [Test]
-        public void Of_UnknownKind_ThrowsException()
-        {
-            const int unknownKind = 42;
-
-            Assert.That(() => Now.Of((Kind)unknownKind), Throws
-                .ArgumentException
-                .With
-                .Message
-                .EqualTo("Kind with value 42 is not supported. Valid values are: Utc|Local"));
         }
 
         [Test]

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClockTest.cs" />
     <Compile Include="DayTest.cs" />
     <Compile Include="Extensions\EnumerableExtensionsTest.cs" />
     <Compile Include="FluentDateTimeOffsetTest.cs" />

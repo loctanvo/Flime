@@ -15,7 +15,7 @@ namespace Fluent.Time.Test
             {
                 time.FreezeTo(Some.Time);
 
-                var today = Day.Today();
+                var today = Day.Today;
                 var todayUtc = Now.Utc;
 
                 Assert.That(today.Date, Is.EqualTo(todayUtc.Date));
@@ -31,8 +31,8 @@ namespace Fluent.Time.Test
             {
                 time.FreezeTo(Some.Time);
 
-                var tomorrow = Day.Tomorrow();
-                var today = Day.Today();
+                var tomorrow = Day.Tomorrow;
+                var today = Day.Today;
 
                 Assert.That(tomorrow.Subtract(today), Is.EqualTo(1.Days()));
             });
@@ -45,8 +45,8 @@ namespace Fluent.Time.Test
             {
                 time.FreezeTo(Some.Time);
 
-                var yesterday = Day.Yesterday();
-                var today = Day.Today();
+                var yesterday = Day.Yesterday;
+                var today = Day.Today;
 
                 Assert.That(today.Subtract(yesterday), Is.EqualTo(1.Days()));
             });
@@ -59,8 +59,8 @@ namespace Fluent.Time.Test
             {
                 time.FreezeTo(Some.Time);
 
-                var tomorrow = Day.Tomorrow();
-                var afterTomorrow = Day.AfterTomorrow();
+                var tomorrow = Day.Tomorrow;
+                var afterTomorrow = Day.AfterTomorrow;
 
                 Assert.That(afterTomorrow.Subtract(tomorrow), Is.EqualTo(1.Days()));
             });
@@ -73,8 +73,8 @@ namespace Fluent.Time.Test
             {
                 time.FreezeTo(Some.Time);
 
-                var yesterday = Day.Yesterday();
-                var beforeYesterday = Day.BeforeYesterday();
+                var yesterday = Day.Yesterday;
+                var beforeYesterday = Day.BeforeYesterday;
 
                 Assert.That(yesterday.Subtract(beforeYesterday), Is.EqualTo(1.Days()));
             });

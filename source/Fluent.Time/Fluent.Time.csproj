@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clock.cs" />
     <Compile Include="Day.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Now.cs" />

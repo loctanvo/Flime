@@ -3,6 +3,14 @@
 	{
 		"selected_items":
 		[
+			[
+				"DAteti",
+				"DateTimeOffset	DateTimeOffset"
+			],
+			[
+				"DateTime",
+				"DateTimeOffset"
+			]
 		]
 	},
 	"buffers":
@@ -11,16 +19,20 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 67.0,
+		"height": 47.0,
 		"selected_items":
 		[
 			[
-				"Snippet: ",
-				"Snippet: Lorem ipsum"
-			],
-			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"test",
+				"OmniSharpSublime: Run Single Test"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
 			],
 			[
 				"jeky",
@@ -60,14 +72,19 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/loctanvo/Projects/Fluent.Time/source"
+		"/Users/loctanvo/Projects/Fluent.Time/source",
+		"/Users/loctanvo/Projects/Fluent.Time/source/Fluent.Time",
+		"/Users/loctanvo/Projects/Fluent.Time/source/Fluent.Time.Test"
 	],
 	"file_history":
 	[
+		"/Users/loctanvo/Projects/Fluent.Time/source/Fluent.Time/Now.cs",
+		"/Users/loctanvo/Library/Application Support/Sublime Text 3/Packages/User/Plain text.sublime-settings",
+		"/Users/loctanvo/Projects/Fluent.Time/source/Fluent.Time.Test/FluentDateTimeOffsetTest.cs",
+		"/Users/loctanvo/Projects/Fluent.Time/source/Fluent.Time/FluentDateTime.cs",
 		"/Users/loctanvo/Projects/Fluent.Time/source/Fluent.Time.sublime-project",
 		"/Users/loctanvo/Projects/Fluent.Time/README.md",
 		"/Users/loctanvo/Projects/aspnet.vnext/Home/samples/ConsoleApp/project.json",
-		"/Users/loctanvo/Library/Application Support/Sublime Text 3/Packages/User/Plain text.sublime-settings",
 		"/Users/loctanvo/Projects/aspnet.vnext/Home/samples/ConsoleApp/Program.cs",
 		"/Users/loctanvo/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/loctanvo/VM/Win10.vmwarevm/Win10.vmx",
@@ -121,6 +138,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			";\n",
 			"share",
 			"me1",
 			"hidden",
@@ -180,21 +198,33 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 289.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 160.0
 	},
 	"project": "Fluent.Time.sublime-project",
 	"replace":
 	{
 		"height": 42.0
 	},
-	"save_all_on_build": true,
+	"save_all_on_build": false,
 	"select_file":
 	{
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"now",
+				"Fluent.Time/Now.cs"
+			]
 		],
 		"width": 0.0
 	},
@@ -208,11 +238,11 @@
 	},
 	"select_symbol":
 	{
-		"height": 0.0,
+		"height": 392.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 392.0
 	},
 	"selected_group": 0,
 	"settings":

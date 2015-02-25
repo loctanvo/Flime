@@ -29,19 +29,19 @@ namespace Fluent.Time.Test.TestUtilities.TimeHandling
 
         public TimeMachine FreezeTo(DateTimeOffset time)
         {
-            Now.FreezeUtcTo(time);
+            Now.FreezeTo(time);
             return this;
         }
 
         public TimeMachine Forward(TimeSpan timeSpan)
         {
-            Now.FreezeUtcTo(Now.Utc.Add(timeSpan));
+            Now.FreezeTo(Now.Utc.Add(timeSpan));
             return this;
         }
 
         public TimeMachine Backward(TimeSpan timeSpan)
         {
-            Now.FreezeUtcTo(Now.Utc.Subtract(timeSpan));
+            Now.FreezeTo(Now.Utc.Subtract(timeSpan));
             return this;
         }
     }

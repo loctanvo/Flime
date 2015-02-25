@@ -10,7 +10,7 @@ namespace Fluent.Time.Test
         [Test]
         public void Ago_Default_SubstractsFromNow()
         {
-        	TimeMachine.SandBox(travel =>
+        	TestUtilities.TimeHandling.TimeMachine.SandBox(travel =>
         	{
         	    travel.FreezeTo(Some.Time);
 
@@ -21,7 +21,7 @@ namespace Fluent.Time.Test
         [Test]
         public void FromNow_Default_AddsFromNow()
         {
-            TimeMachine.SandBox(travel =>
+            TestUtilities.TimeHandling.TimeMachine.SandBox(travel =>
             {
                 travel.FreezeTo(Some.Time);
 

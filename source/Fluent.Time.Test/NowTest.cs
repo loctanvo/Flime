@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Threading;
-using Fluent.Time.Test.TestUtilities.CultureHandling;
 using Fluent.Time.Test.TestUtilities.Data;
-using Fluent.Time.Test.TestUtilities.TimeHandling;
 using NUnit.Framework;
 
 namespace Fluent.Time.Test
@@ -23,51 +21,9 @@ namespace Fluent.Time.Test
         }
 
         [Test]
-        public void LocalTime_EqualsToUtcButDifferInTimeZone()
-        {
-            const string cultureWithTimeOffsetComparedToUtc = "nb-NO";
-            Culture.Sandbox(cultureWithTimeOffsetComparedToUtc, () =>
-                TimeMachine.SandBox(travel =>
-                {
-                    travel.FreezeTo(Some.Time);
-
-                    var utc = Now.Utc;
-                    var local = Now.LocalTime;
-
-                    Assert.That(local, Is.EqualTo(utc));
-                    Assert.That(local.Offset, Is.Not.EqualTo(utc.Offset));
-                    Assert.That(local.Ticks, Is.Not.EqualTo(utc.Ticks));
-                }));
-        }
-
-        [Test]
-        public void OfKind_Utc_ReturnsUtcKind()
-        {
-            var utc = Now.OfKind<Utc>();
-
-            Assert.That(utc, Is.EqualTo(Now.Utc));
-            Assert.That(utc.Offset, Is.EqualTo(TimeSpan.Zero));
-        }
-
-        [Test]
-        public void OfKind_Local_ReturnsLocalTime()
-        {
-            const string cultureWithOffsetNotZero = "nb-NO";
-            TimeMachine.Sandbox(cultureWithOffsetNotZero, time =>
-            {
-                time.FreezeTo(Some.Time);
-                var result = Now.OfKind<Local>();
-                var localTime = Now.LocalTime;
-
-                Assert.That(result.Ticks, Is.EqualTo(localTime.Ticks));
-                Assert.That(result.Offset, Is.EqualTo(localTime.Offset));
-            });
-        }
-
-        [Test]
         public void FreezeUtcTo_GivenTime_AlwaysReturnsGivenTime()
         {
-            Now.FreezeUtcTo(Some.Time);
+            Now.FreezeTo(Some.Time);
 
             Thread.Sleep(0.5.Seconds());
 

@@ -9,29 +9,13 @@ namespace Fluent.Time.Test
     public class DayTest
     {
         [Test]
-        public void Today_Local_ReturnTodaysDate()
-        {
-            TimeMachine.Sandbox(Some.CultureNotUtc, time =>
-            {
-                time.FreezeTo(Some.Time);
-
-                var today = Day.Today<Local>();
-                var todayLocalTime = Now.LocalTime;
-
-                Assert.That(today.Date, Is.EqualTo(todayLocalTime.Date));
-                Assert.That(today.TimeOfDay, Is.EqualTo(TimeSpan.Zero));
-                Assert.That(today.Offset, Is.Not.EqualTo(TimeSpan.Zero));
-            });
-        }
-
-        [Test]
         public void Today_Utc_ReturnTodaysDate()
         {
             TimeMachine.Sandbox(Some.CultureNotUtc, time =>
             {
                 time.FreezeTo(Some.Time);
 
-                var today = Day.Today<Utc>();
+                var today = Day.Today();
                 var todayUtc = Now.Utc;
 
                 Assert.That(today.Date, Is.EqualTo(todayUtc.Date));
@@ -47,8 +31,8 @@ namespace Fluent.Time.Test
             {
                 time.FreezeTo(Some.Time);
 
-                var tomorrow = Day.Tomorrow<Utc>();
-                var today = Day.Today<Utc>();
+                var tomorrow = Day.Tomorrow();
+                var today = Day.Today();
 
                 Assert.That(tomorrow.Subtract(today), Is.EqualTo(1.Days()));
             });
@@ -61,8 +45,8 @@ namespace Fluent.Time.Test
             {
                 time.FreezeTo(Some.Time);
 
-                var yesterday = Day.Yesterday<Utc>();
-                var today = Day.Today<Utc>();
+                var yesterday = Day.Yesterday();
+                var today = Day.Today();
 
                 Assert.That(today.Subtract(yesterday), Is.EqualTo(1.Days()));
             });
@@ -75,8 +59,8 @@ namespace Fluent.Time.Test
             {
                 time.FreezeTo(Some.Time);
 
-                var tomorrow = Day.Tomorrow<Utc>();
-                var afterTomorrow = Day.AfterTomorrow<Utc>();
+                var tomorrow = Day.Tomorrow();
+                var afterTomorrow = Day.AfterTomorrow();
 
                 Assert.That(afterTomorrow.Subtract(tomorrow), Is.EqualTo(1.Days()));
             });
@@ -89,8 +73,8 @@ namespace Fluent.Time.Test
             {
                 time.FreezeTo(Some.Time);
 
-                var yesterday = Day.Yesterday<Utc>();
-                var beforeYesterday = Day.BeforeYesterday<Utc>();
+                var yesterday = Day.Yesterday();
+                var beforeYesterday = Day.BeforeYesterday();
 
                 Assert.That(yesterday.Subtract(beforeYesterday), Is.EqualTo(1.Days()));
             });

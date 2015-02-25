@@ -41,7 +41,6 @@
   <ItemGroup>
     <Compile Include="Day.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
-    <Compile Include="Kind.cs" />
     <Compile Include="Now.cs" />
     <Compile Include="FluentDateTimeOffset.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

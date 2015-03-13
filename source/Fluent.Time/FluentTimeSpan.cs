@@ -29,6 +29,11 @@ namespace Fluent.Time
             return TimeSpan.FromSeconds(seconds);
         }
 
+        public static TimeSpan Milliseconds(this double milliseconds)
+        {
+            return TimeSpan.FromMilliseconds(milliseconds);
+        }
+
         public static TimeSpan Weeks(this int weeks)
         {
             return weeks.CallDoubleVersionOf(Weeks);
@@ -52,6 +57,11 @@ namespace Fluent.Time
         public static TimeSpan Seconds(this int seconds)
         {
             return seconds.CallDoubleVersionOf(Seconds);
+        }
+
+        public static TimeSpan Milliseconds(this int milliseconds)
+        {
+            return milliseconds.CallDoubleVersionOf(Milliseconds);
         }
 
         public static TimeSpan And(this TimeSpan timeSpan, TimeSpan addition)

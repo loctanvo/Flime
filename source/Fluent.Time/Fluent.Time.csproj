@@ -41,9 +41,9 @@
   <ItemGroup>
     <Compile Include="Clock.cs" />
     <Compile Include="Day.cs" />
-    <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Now.cs" />
     <Compile Include="FluentDateTimeOffset.cs" />
+    <Compile Include="Parsing\StringToTimespanExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FluentTimeSpan.cs" />
     <Compile Include="Year.cs" />

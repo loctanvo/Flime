@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/636s1hf3w4p6aued/branch/master?svg=true)](https://ci.appveyor.com/project/loctanvo/fluent-time/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/nuxp4l0gv76joq3d/branch/master?svg=true)](https://ci.appveyor.com/project/loctanvo/flime/branch/master)
 
 Flime - Fluent.Time
 ===========

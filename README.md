@@ -16,7 +16,6 @@ public void And_AddsTheTime()
     Assert.That(2.Hours().And(10.Minutes()), Is.EqualTo(TimeSpan.FromMinutes(130)));
 }
 ```
-
 ``` csharp
 [Test]
 public void OClock_NotSpecified_ReturnsTimeToday()
@@ -48,5 +47,17 @@ public void DayAfterTomorrow_IsTomorrowAddedOneDay()
 
         Assert.That(afterTomorrow.Subtract(tomorrow), Is.EqualTo(1.Days()));
     });
+}
+```
+```csharp
+[Test]
+public void Ago_Default_SubstractsFromNow()
+{
+	TestUtilities.TimeHandling.TimeMachine.SandBox(travel =>
+	{
+	    travel.FreezeTo(Some.Time);
+
+	    Assert.That(2.Hours().Ago(), Is.EqualTo(Now.Utc.Subtract(2.Hours())));
+	});
 }
 ```

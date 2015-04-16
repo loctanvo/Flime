@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>loctanvo.fluent.time</id>
+    <version>$version$</version>
+    <authors>Loc Tan Vo</authors>
+    <description>Utility classes for time handling. Fluent and handy extension methods for TimeSpan creation.</description>
+    <projectUrl>https://github.com/loctanvo/Flime</projectUrl>
+    <releaseNotes>Utility classes for time handling. Fluent and handy extension methods for TimeSpan creation.</releaseNotes>
+  </metadata>
+</package>

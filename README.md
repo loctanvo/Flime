@@ -61,3 +61,14 @@ public void Ago_Default_SubstractsFromNow()
 	});
 }
 ```
+```csharp
+[TestCase("1.Second", 1)]
+[TestCase("1.second", 1)]
+[TestCase("1.Seconds", 1)]
+[TestCase("42.second", 42)]
+[TestCase("42.Seconds", 42)]
+public void ToTimeSpan_ValidSeconds_ParseCorrectly(string input, int seconds)
+{
+    AssertEquals(input, seconds.Seconds());
+}
+```
